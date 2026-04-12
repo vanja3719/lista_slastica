@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+    --font-playfair: "Playfair Display", serif;
+    --font-nunito: "Nunito", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Soft background */
+    background-color: #fdfbf7;
+}
+
+/* Base custom styles */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.body-font {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Soft cards */
+.soft-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.soft-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Overrides for Buttons for softer look */
+.btn {
+    border-radius: 9999px !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    font-family: 'Nunito', sans-serif;
+    border: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-primary {
+    background-color: #e5989b !important; /* Soft warm pink/rose */
+    color: white !important;
+}
+.btn-primary:hover {
+    background-color: #b56576 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-secondary {
+    background-color: #ffb4a2 !important; /* Peach/warm amber */
+    color: #4a4a4a !important;
+}
+.btn-secondary:hover {
+    background-color: #ff9f8c !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-accent {
+    background-color: #ffffff !important;
+    color: #4a4a4a !important;
+    border: 1px solid #eaeaea !important;
+}
+.btn-accent:hover {
+    background-color: #f8f9fa !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Inputs */
+.input {
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    background-color: #f8fafc !important;
+    font-family: 'Nunito', sans-serif;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 3px rgba(229, 152, 155, 0.3) !important;
+    outline: none !important;
+    border-color: #e5989b !important;
+}
