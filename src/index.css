@@ -1,0 +1,513 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+    --font-playfair: "Playfair Display", serif;
+    --font-nunito: "Nunito", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Soft background */
+    background-color: #fdfbf7;
+}
+
+/* Base custom styles */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.title-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.body-font {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Soft cards */
+.soft-card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.soft-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}
+
+/* Overrides for Buttons for softer look */
+.btn {
+    border-radius: 9999px !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    font-family: 'Nunito', sans-serif;
+    border: none !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease !important;
+}
+
+.btn-primary {
+    background-color: #e5989b !important; /* Soft warm pink/rose */
+    color: white !important;
+}
+.btn-primary:hover {
+    background-color: #b56576 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-secondary {
+    background-color: #ffb4a2 !important; /* Peach/warm amber */
+    color: #4a4a4a !important;
+}
+.btn-secondary:hover {
+    background-color: #ff9f8c !important;
+    transform: translateY(-2px) !important;
+}
+
+.btn-accent {
+    background-color: #ffffff !important;
+    color: #4a4a4a !important;
+    border: 1px solid #eaeaea !important;
+}
+.btn-accent:hover {
+    background-color: #f8f9fa !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Inputs */
+.input {
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    background-color: #f8fafc !important;
+    font-family: 'Nunito', sans-serif;
+}
+
+.input:focus {
+    box-shadow: 0 0 0 3px rgba(229, 152, 155, 0.3) !important;
+    outline: none !important;
+    border-color: #e5989b !important;
+}
+
+/* ─── Cake Card Image ─────────────────────────────────── */
+
+.cake-card__image-wrap {
+    height: 14rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.cake-tag {
+    font-size: 0.75rem;
+    background-color: #f8f9fa;
+    color: #7a7a7a;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid #eaeaea;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    transition: all 0.15s ease;
+}
+
+.cake-tag:hover {
+    background-color: #fdf2f2;
+    color: #e5989b;
+    border-color: #e5989b40;
+}
+
+/* line clamp utility */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ─── Search Bar ──────────────────────────────────────── */
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar__icon {
+    position: absolute;
+    left: 16px;
+    width: 20px;
+    height: 20px;
+    color: #b0b0b0;
+    pointer-events: none;
+    transition: color 0.2s;
+}
+
+.search-bar:focus-within .search-bar__icon {
+    color: #e5989b;
+}
+
+.search-bar__input {
+    width: 100%;
+    padding: 14px 48px 14px 48px;
+    border-radius: 9999px !important;
+    border: 2px solid #eaeaea !important;
+    background-color: #ffffff !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    color: #4a4a4a;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.search-bar__input:focus {
+    border-color: #e5989b !important;
+    box-shadow: 0 0 0 4px rgba(229, 152, 155, 0.15), 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+    outline: none !important;
+}
+
+.search-bar__input::placeholder {
+    color: #b0b0b0;
+}
+
+.search-bar__clear {
+    position: absolute;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f8f9fa;
+    border: none;
+    cursor: pointer;
+    color: #7a7a7a;
+    transition: all 0.2s;
+}
+
+.search-bar__clear:hover {
+    background: #e5989b;
+    color: white;
+}
+
+/* ─── Favorite Button ─────────────────────────────────── */
+
+.fav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    color: #ccc;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.fav-btn--sm {
+    width: 38px;
+    height: 38px;
+}
+.fav-btn--sm svg {
+    width: 20px;
+    height: 20px;
+}
+
+.fav-btn--lg {
+    width: 52px;
+    height: 52px;
+}
+.fav-btn--lg svg {
+    width: 28px;
+    height: 28px;
+}
+
+.fav-btn:hover {
+    color: #e5989b;
+    transform: scale(1.1);
+    box-shadow: 0 4px 14px rgba(229, 152, 155, 0.3);
+}
+
+.fav-btn--active {
+    color: #e5989b !important;
+    background: #fdf2f2;
+}
+
+.fav-btn--pulse {
+    animation: fav-pulse 0.4s ease-out;
+}
+
+@keyframes fav-pulse {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.35); }
+    60% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+/* ─── Skeleton Loading ────────────────────────────────── */
+
+.skeleton-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.02);
+}
+
+.skeleton-card::before {
+    content: '';
+    display: block;
+    height: 14rem;
+    background: linear-gradient(110deg, #f0f0f0 25%, #fafafa 37%, #f0f0f0 63%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-card::after {
+    content: '';
+    display: block;
+    height: 6rem;
+    margin: 1.25rem;
+    border-radius: 8px;
+    background: linear-gradient(110deg, #f0f0f0 25%, #fafafa 37%, #f0f0f0 63%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite 0.15s;
+}
+
+.skeleton-loader {
+    width: 100%;
+    max-width: 800px;
+}
+
+.skeleton-block {
+    background: linear-gradient(110deg, #f0f0f0 25%, #fafafa 37%, #f0f0f0 63%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ─── Ingredient List ─────────────────────────────────── */
+
+.ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ingredient-list__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: #fdfbf7;
+    transition: background 0.15s;
+}
+
+.ingredient-list__item:hover {
+    background: #fdf2f2;
+}
+
+.ingredient-list__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #e5989b;
+    flex-shrink: 0;
+}
+
+/* ─── Recipe Steps ────────────────────────────────────── */
+
+.recipe-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    counter-reset: step;
+}
+
+.recipe-steps__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: #fdfbf7;
+    transition: all 0.2s ease;
+}
+
+.recipe-steps__item:hover {
+    background: #fdf2f2;
+    transform: translateX(4px);
+}
+
+.recipe-steps__number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e5989b, #ffb4a2);
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.recipe-steps__text {
+    font-family: 'Nunito', sans-serif;
+    color: #5a5a5a;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-top: 4px;
+}
+
+/* ─── Video Embed ─────────────────────────────────────── */
+
+.video-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.video-embed__iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 12px;
+}
+
+/* ─── Comment Section ─────────────────────────────────── */
+
+.comment-section__login-prompt {
+    text-align: center;
+    padding: 20px;
+    background: #fdfbf7;
+    border-radius: 12px;
+    color: #7a7a7a;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 16px;
+}
+
+.comment-section__form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.comment-section__textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 2px solid #eaeaea;
+    background: #f8fafc;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: #4a4a4a;
+    resize: vertical;
+    min-height: 80px;
+    transition: all 0.2s ease;
+}
+
+.comment-section__textarea:focus {
+    border-color: #e5989b;
+    box-shadow: 0 0 0 3px rgba(229, 152, 155, 0.2);
+    outline: none;
+}
+
+.comment-section__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.comment-card {
+    padding: 16px;
+    background: #fdfbf7;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: background 0.15s;
+}
+
+.comment-card:hover {
+    background: #fdf2f2;
+}
+
+.comment-card__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.comment-card__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e5989b, #ffb4a2);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.comment-card__name {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: #4a4a4a;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.comment-card__date {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    color: #aaa;
+    display: block;
+}
+
+.comment-card__text {
+    font-family: 'Nunito', sans-serif;
+    color: #5a5a5a;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* ─── Error page fix ──────────────────────────────────── */
+.hero {
+    border-radius: 16px;
+}
